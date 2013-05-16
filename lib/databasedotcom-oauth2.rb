@@ -232,7 +232,7 @@ module Databasedotcom
             #   to session but only stored via @endpoints variable server side.
             client.client_id     = nil
             client.client_secret = nil
-            client.version       = nil
+            client.version       = @api_version
             client.debugging     = nil
             client.last_seen     = Time.now
             new_session_client = Gibberish::AES.new(@token_encryption_key).encrypt(Marshal.dump(client))
